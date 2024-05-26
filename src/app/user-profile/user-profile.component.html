@@ -24,4 +24,22 @@
 
   <!--  easier approach for 2 way data binding  -->
   <input type="text" [(ngModel)]="defaultInputVal">
+
+
+
+  <!--          topic 4 : for loops - iterating objects  -->
+  @for (user of users; track user.name) {
+
+    <!--  using if to select user having salary greater than 10000 -->
+    @if (user.salary >10000) {
+        <h6>Name - {{user.name}}  Age - {{user.age}}  Salary - {{user.salary}}</h6>
+    }@else{
+        <h6>Name - {{user.name}}  Age - {{user.age}}  Salary - btaane layak ni</h6>
+    }
+        
+  }
+
+
+  <!--          topic 5 : understanding the cocept of paasing value from parent to child -->
+  <h4>{{name}}</h4>
 </div>
