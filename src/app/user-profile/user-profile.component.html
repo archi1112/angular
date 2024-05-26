@@ -3,7 +3,25 @@
 
 <div>User details
   <p>
+
+    <!--        topic 1 : interpolation  -->
     <!-- interpolation -->
     Name - {{name}} Age - {{age}} Salary - {{salary}}
   </p>
+
+  <!--          topic 2 - property binding and events is angular  -->
+  <!-- events in angular -->
+  <!-- [value] is used as we want to inject typescript code and value is a property -->
+  <h2>input value - {{defaultInputVal}}</h2>
+  <input type="text" [value]="defaultInputVal" (input)="onChange($event)">
+<br>
+
+  <!-- topic 3 : when the input value change the value in h2 tag should also change -->
+  <!--  2 way data binding  -> template to html file and html file to back to template  -->
+  <!-- <h2>input value - {{defaultInputVal}}</h2>
+  <input type="text" [value]="defaultInputVal" (input)="onChange($event)">
+ -->
+
+  <!--  easier approach for 2 way data binding  -->
+  <input type="text" [(ngModel)]="defaultInputVal">
 </div>
