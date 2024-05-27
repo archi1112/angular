@@ -11,9 +11,7 @@ export class JokeService {
    }
 
    getJoke(){
-    this.http.get("https://v2.jokeapi.dev/joke/Programming").subscribe(data =>{
-      console.log(data);
-    });
+    return this.http.get("https://api.chucknorris.io/jokes/random?category=movie")
    }
 
 }
