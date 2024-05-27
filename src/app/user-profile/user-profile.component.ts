@@ -1,6 +1,7 @@
 import { Component, Input, Output, OutputEmitterRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CountrycodePipe } from '../pipes/countrycode.pipe';
+import { HighlightDirective } from '../directives/highlight.directive';
 
 
 function formatName(value:string){
@@ -9,7 +10,7 @@ function formatName(value:string){
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [FormsModule , CountrycodePipe],
+  imports: [FormsModule , CountrycodePipe , HighlightDirective],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css',
 })

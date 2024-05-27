@@ -1,47 +1,45 @@
+<h1 appHighlight>User Information</h1>
 
-<h1>User Information</h1>
-
-<div>User details
+<!--  apphighlight used to modify : it's called directive -->
+<div >
+  User details
   <p>
-
-           <!-- topic 1 : interpolation  -->
+    <!-- topic 1 : interpolation  -->
     <!-- interpolation -->
     <!-- country code is pipe example there are some built in pipes also but this is example of custom pipe {here 1 , 2 are arguments passed to pipe} -->
- Name - {{name}} Age - {{age}} Salary - {{salary}} Phone - {{phoneno | countrycode:"1":"2" }}
+    Name - {{ name }} Age - {{ age }} Salary - {{ salary }} Phone -
+    {{ phoneno | countrycode : "1" : "2" }}
   </p>
 
   <!--          topic 2 - property binding and events is angular  -->
   <!-- events in angular -->
   <!-- [value] is used as we want to inject typescript code and value is a property -->
-  <h2>input value - {{defaultInputVal}}</h2>
-  <input type="text" [value]="defaultInputVal" (input)="onChange($event)">
-<br>
+  <h2>input value - {{ defaultInputVal }}</h2>
+  <input type="text" [value]="defaultInputVal" (input)="onChange($event)" />
+  <br />
 
   <!-- topic 3 : when the input value change the value in h2 tag should also change -->
   <!--  2 way data binding  -> template to html file and html file to back to template  -->
-  <h2>input value - {{defaultInputVal}}</h2>
-  <input type="text" [value]="defaultInputVal" (input)="onChange($event)">
-
+  <h2>input value - {{ defaultInputVal }}</h2>
+  <input type="text" [value]="defaultInputVal" (input)="onChange($event)" />
 
   <!--  easier approach for 2 way data binding  -->
-  <input type="text" [(ngModel)]="defaultInputVal">
-
-
+  <input type="text" [(ngModel)]="defaultInputVal" />
 
   <!--          topic 4 : for loops - iterating objects  -->
   @for (user of users; track user.name) {
 
-    <!--  using if to select user having salary greater than 10000 -->
-    @if (user.salary >10000) {
-        <h6>Name - {{user.name}}  Age - {{user.age}}  Salary - {{user.salary}}</h6>
-    }@else{
-        <h6>Name - {{user.name}}  Age - {{user.age}}  Salary - btaane layak ni</h6>
-    }
-        
-  }
-
+  <!--  using if to select user having salary greater than 10000 -->
+  @if (user.salary >10000) {
+  <h6>
+    Name - {{ user.name }} Age - {{ user.age }} Salary - {{ user.salary }}
+  </h6>
+  }@else{
+  <h6>Name - {{ user.name }} Age - {{ user.age }} Salary - btaane layak ni</h6>
+  } }
 
   <!--          topic 5 : understanding the cocept of paasing value from parent to child -->
-  <h4>{{name}}</h4>
- 
-<!-- </div> -->
+  <h4>{{ name }}</h4>
+
+  <!-- </div> -->
+</div>
