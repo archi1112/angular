@@ -4,9 +4,10 @@
 <div>User details
   <p>
 
-    <!--        topic 1 : interpolation  -->
+           <!-- topic 1 : interpolation  -->
     <!-- interpolation -->
-    Name - {{name}} Age - {{age}} Salary - {{salary}}
+    <!-- country code is pipe example there are some built in pipes also but this is example of custom pipe {here 1 , 2 are arguments passed to pipe} -->
+ Name - {{name}} Age - {{age}} Salary - {{salary}} Phone - {{phoneno | countrycode:"1":"2" }}
   </p>
 
   <!--          topic 2 - property binding and events is angular  -->
@@ -18,9 +19,9 @@
 
   <!-- topic 3 : when the input value change the value in h2 tag should also change -->
   <!--  2 way data binding  -> template to html file and html file to back to template  -->
-  <!-- <h2>input value - {{defaultInputVal}}</h2>
+  <h2>input value - {{defaultInputVal}}</h2>
   <input type="text" [value]="defaultInputVal" (input)="onChange($event)">
- -->
+
 
   <!--  easier approach for 2 way data binding  -->
   <input type="text" [(ngModel)]="defaultInputVal">
@@ -42,4 +43,5 @@
 
   <!--          topic 5 : understanding the cocept of paasing value from parent to child -->
   <h4>{{name}}</h4>
-</div>
+ 
+<!-- </div> -->

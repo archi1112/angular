@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, OutputEmitterRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CountrycodePipe } from '../pipes/countrycode.pipe';
 
 
 function formatName(value:string){
@@ -8,7 +9,7 @@ function formatName(value:string){
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule , CountrycodePipe],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css',
 })
@@ -17,9 +18,11 @@ export class UserProfileComponent {
   //    topic 4   :  accepting values passed from parent to child
   // @input decorator is used to take value for parent ; tranform transforms the value acc to the function
   @Input({alias:"userName" , transform:formatName }) name = " "
+
   // name = 'sanjay';
   age = 28;
   salary = 45000;
+  phoneno:number=6453567;
   defaultInputVal: any = '45';
   users = [
     { name: 'hardy', age: 27, salary: 65000 },
