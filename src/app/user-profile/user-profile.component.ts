@@ -1,4 +1,4 @@
-import { Component, Input, Output, OutputEmitterRef } from '@angular/core';
+import { Component, ElementRef, Input, Output, OutputEmitterRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CountrycodePipe } from '../pipes/countrycode.pipe';
 import { HighlightDirective } from '../directives/highlight.directive';
@@ -30,6 +30,11 @@ export class UserProfileComponent {
     { name: 'mahip', age: 27, salary: 6509000 },
     { name: 'amit', age: 27, salary: 600 },
   ];
+
+  //  in lifecyclemethods viewchild is accessible only in AfterViewInit
+  // @viewxhild used to get reference of element and modify
+  @ViewChild("myparagraph") paragraph?: ElementRef 
+
 
   // function for event on input attribute
   onChange(e: Event) {
