@@ -17,6 +17,11 @@ export class JokeComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.getAnotherJoke()
+    
+  }
+
+  getAnotherJoke(){
     this.jokeService.getJoke().subscribe((data:any) =>{
       this.joke = data.value
     })
